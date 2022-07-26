@@ -28,7 +28,7 @@ def get_currency_rate(rate1, rate2) -> Response:
 
 @app.route("/convert-rate/<string:rate1>/<string:rate2>/<float:amount>")
 def convert_rate(rate1: str, rate2: str, amount: float) -> Response:
-    """Get conversion rate.  You will get a 404 if amount is not a float.  100 --> 100.0"""
+    """Get conversion rate amount.  You will get a 404 if amount is not a float.  100 --> 100.0"""
     log.info(f"convert currency rate. {rate1}, {rate2}. Amount: {amount}")
     inputs = [rate1, rate2, amount]
     if not valid_api_key():
