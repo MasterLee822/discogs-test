@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+    app:
+        build: .
+        ports:
+            - "35000:35000"
+        environment:
+            PYTHONDONTWRITEBYTECODE: 1
+            FLASK_DEBUG: 1
+            FLASK_RUN_PORT: 35000
+            FLASK_RUN_HOST: 0.0.0.0
+        volumes:
+            - .:/usr/src/app
